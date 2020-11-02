@@ -32,7 +32,7 @@ networking:
 | tee -a /k8s-install/kubeadm-config.yaml
 wget https://raw.githubusercontent.com/vmware-tanzu/antrea/master/build/yamls/antrea.yml -P /k8s-install/
 
-sed -i -e 's\ # Traceflow: false\ Traceflow: True\g' /k8s-install/antrea.yml
+sed -i -e 's\  # Traceflow: false\ Traceflow: True\g' /k8s-install/antrea.yml
 sed -i -e 's\  #  AntreaPolicy: false\ AntreaPolicy: True\g' /k8s-install/antrea.yml
 sed -i -e 's\  #  NetworkPolicyStats: false\ NetworkPolicyStats: True\g' /k8s-install/antrea.yml
 
