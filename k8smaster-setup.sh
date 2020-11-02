@@ -26,8 +26,6 @@ printf \
 'apiVersion: kubeadm.k8s.io/v1beta2
 kind: ClusterConfiguration
 kubernetesVersion: 1.18.10
-controlPlaneEndpoint: "k8smaster:6443"
-networking:
-podSubnet: 172.19.0.0/16'\
+controlPlaneEndpoint: "k8smaster:6443"'\
 | tee -a /k8s-install/kubeadm-config.yaml
-kubeadm init --config=/k8s-install/kubeadm-config.yaml --upload-certs | tee /k8s-install/kubeadm-init.out
+kubeadm init --pod-network-cidr=172.19.0.0/16 --config=/k8s-install/kubeadm-config.yaml --upload-certs | tee /k8s-install/kubeadm-init.out
