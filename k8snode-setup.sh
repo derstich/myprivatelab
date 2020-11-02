@@ -15,7 +15,6 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 touch /etc/apt/sources.list.d/kubernetes.list
 echo 'deb http://apt.kubernetes.io/  kubernetes-xenial  main' | tee -a /etc/apt/sources.list.d/kubernetes.list
 apt-get update
-apt-cache show kubelet | grep "Version: 1.18"
 
 apt-get install -y kubeadm=1.18.10-00 kubelet=1.18.10-00 kubectl=1.18.10-00
 
